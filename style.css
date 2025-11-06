@@ -1,24 +1,23 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   text-decoration: none;
   border: none;
   outline: none;
-  box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: "Exo 2 ", sans-serif, "Courier New", Courier, monospace;
+  font-family: "Exo 2", sans-serif;
 }
 :root {
   --bg-color: #1f242d;
   --second-bg-color: #323946;
-  --text-color: #ffffff;
+  --text-color: #fff;
   --main-color: #a21caf;
 }
 html {
   font-size: 62.5%;
   overflow-x: hidden;
 }
-
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -27,21 +26,24 @@ section {
   min-height: 100vh;
   padding: 8rem 10% 2rem;
 }
-
-/* Navbar */
+/* NavBar */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-
-  display: flex;
-  background-color: var(--bg-color);
-  align-items: center;
-  justify-content: space-between;
-  z-index: 100;
-  /* 1rem->16px/2rem->32px */
   padding: 2rem 9%;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+.menu-btn {
+  display: none;
+}
+.menu-icon {
+  display: none;
 }
 .logo {
   font-size: 2.5rem;
@@ -49,19 +51,21 @@ section {
   font-weight: 600;
   cursor: default;
 }
+
 .navbar a {
   font-size: 1.7rem;
   color: var(--text-color);
   margin-left: 4rem;
 }
+
 .navbar a:hover {
   color: var(--main-color);
 }
-/* Home */
+
+/* Home Section */
 .home {
   display: flex;
   justify-content: center;
-  display: flex;
   align-items: center;
 }
 .home-img {
@@ -75,7 +79,7 @@ section {
   height: 100%;
   background: var(--main-color);
   z-index: -1;
-  clip-path: polygon(20% 15%, 80% 15%, 100% 70%, 0% 70%);
+  clip-path: polygon(20% 15%, 80% 15%, 100% 70%, 0 70%);
 }
 .home-img img {
   width: 35vw;
@@ -86,9 +90,9 @@ section {
   margin-bottom: 2rem;
 }
 .home-content h1 {
+  font-size: 5.6rem;
   font-weight: 700;
   line-height: 1.3;
-  font-size: 5.5rem;
 }
 .home-content p {
   font-size: 1.6rem;
@@ -101,19 +105,18 @@ section {
   color: var(--main-color);
   margin: 3rem 1.5rem 3rem 0;
 }
-
 .social-links a:hover {
   background-color: var(--main-color);
   color: var(--bg-color);
   transition: all 0.3s ease;
   background-clip: text;
   text-shadow: 0 0 1rem var(--main-color);
+  /* box-shadow: 0 0 5px var(--main-color); */
 }
 .home-span {
-  color: var(--main-color);
+  color: var(--bg-color);
   position: relative;
 }
-
 .frontend-span,
 .backend-span,
 .fullstack-span {
@@ -121,10 +124,10 @@ section {
   color: transparent;
   width: 0;
   height: 100%;
-  left: 0;
-  top: 0;
   background: var(--main-color);
   background-clip: text;
+  left: 0;
+  top: 0;
 }
 .frontend-span {
   animation: animate-front 6s ease-in-out infinite;
@@ -135,11 +138,11 @@ section {
 .fullstack-span {
   animation: animate-full 6s ease-in-out infinite;
 }
+
 .last-span {
   margin-left: 15rem;
   color: var(--text-color);
 }
-
 @keyframes animate-front {
   0% {
     width: 0;
@@ -151,7 +154,6 @@ section {
     width: 0;
   }
 }
-
 @keyframes animate-back {
   33% {
     width: 0;
@@ -163,7 +165,6 @@ section {
     width: 0;
   }
 }
-
 @keyframes animate-full {
   66% {
     width: 0;
@@ -175,9 +176,9 @@ section {
     width: 0;
   }
 }
-/* HOME END */
 
-/* ABOUT START */
+/* About Section */
+
 .about {
   display: flex;
   justify-content: center;
@@ -188,38 +189,44 @@ section {
 .about-img img {
   width: 35vw;
 }
+
 .heading {
-  /* text-align: center; HIYERARSI */
+  text-align: center;
   font-size: 4.5rem;
 }
+
 .about-content h2 {
-  line-height: 1.2;
   text-align: left;
+  line-height: 1.2;
 }
+
 .about-content h3 {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
 }
+
 .about-content p {
   position: relative;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin: 2rem 0 3rem;
 }
+
 .about-btn {
   display: inline-block;
   padding: 1rem 3rem;
-  font-size: 1.6rem;
+  background: var(--main-color);
   border-radius: 4rem;
+  font-size: 1.6rem;
+  color: var(--second-bg-color);
   letter-spacing: 0.1rem;
   font-weight: 600;
-  transition: 0.5s ease-in-out;
-  background: var(--main-color);
-  color: var(--second-bg-color);
+  transition: 0.5s ease;
   filter: drop-shadow(0 0 2rem var(--main-color));
 }
 .about-btn:hover {
   filter: none;
   color: var(--text-color);
 }
+
 .about-span {
   color: var(--main-color);
   position: relative;
@@ -227,11 +234,11 @@ section {
 .about-img img {
   animation: anim 30s infinite;
   background: var(--main-color);
-  filter: drop-shadow(0 0 20rem var(--main-color));
-  border: 4px solid var(--text-color);
-  border-radius: 30% 70% 53% 47%/26% 46% 54% 74%;
+  filter: drop-shadow(0 0 10rem var(--main-color));
+  border: 3px solid var(--text-color);
+  border-radius: 30% 70% 53% 47% / 26% 46% 54% 74%;
 }
-/*@keyframes anim {
+/* @keyframes anim {
   0%,
   100% {
     border-radius: 30% 70% 70% 30% / 30% 52% 48% 70%;
@@ -272,8 +279,7 @@ section {
   90% {
     border-radius: 20% 80% 20% 80% / 20% 80% 20% 80%;
   }
- } */
-
+} */
 .about-content p span {
   color: transparent;
   background-clip: text;
@@ -295,9 +301,7 @@ section {
     background-size: 100% 100%;
   }
 }
-
-/* ABOUT END */
-/* SERVICES START */
+/* Services Section */
 .services {
   background-color: var(--bg-color);
   display: flex;
@@ -320,7 +324,7 @@ section {
   border-radius: 2rem;
   text-align: center;
   border: 0.2rem solid transparent;
-  transition: 1s ease;
+  transition: 0.4s ease;
 }
 .services-box i {
   font-size: 7rem;
@@ -332,10 +336,10 @@ section {
   background: var(--main-color);
   border-radius: 4rem;
   font-size: 1.6rem;
-  color: var(--text-color);
+  color: var(--second-bg-color);
   letter-spacing: 0.1rem;
   font-weight: 600;
-  transition: 1s ease;
+  transition: 0.5s ease;
 }
 .services-box h3 {
   font-size: 2.6rem;
@@ -357,7 +361,247 @@ section {
   color: var(--main-color);
   position: relative;
 }
-/* SERVICES END */
+/* Services End */
 
-/* PORTFOLIO START */
-/* PORTFOLIO END */
+/* Portfolio Start */
+.portfolio {
+  background-color: var(--second-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5rem;
+}
+.portfolio-span {
+  color: var(--main-color);
+  position: relative;
+}
+.portfolio h2 {
+  margin-bottom: 4rem;
+}
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 2.5rem;
+}
+.portfolio-box {
+  position: relative;
+  border-radius: 2rem;
+  box-shadow: 0 0 1rem var(--bg-color);
+  overflow: hidden;
+  display: flex;
+}
+.portfolio-box img {
+  width: 100%;
+  object-fit: cover;
+  transition: 0.5s ease;
+  aspect-ratio: 4/3;
+}
+.portfolio-box:hover img {
+  transform: translateY(-100%);
+}
+.portfolio-box:hover .portfolio-layer {
+  transform: translateY(0);
+}
+.portfolio-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(rgba(0, 0, 0, 0.5), var(--main-color));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 5rem;
+  transform: translateY(100%);
+  transition: 0.5s ease;
+}
+.portfolio-layer h4 {
+  font-size: 3rem;
+}
+.portfolio-layer p {
+  font-size: 1rem;
+  margin: 0.3rem 0 1rem;
+  line-height: 1.5;
+}
+.portfolio-layer a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  background: var(--text-color);
+  border-radius: 50%;
+}
+.portfolio-layer a i {
+  font-size: 2rem;
+  color: var(--second-bg-color-color);
+}
+/* Portfolio End */
+/* Contact Me Start */
+.contact {
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5rem;
+}
+.contact span {
+  color: var(--main-color);
+  position: relative;
+}
+.contact form {
+  width: (100%);
+  text-align: center;
+}
+.contact-btn {
+  display: inline-block;
+  padding: 1rem 5rem;
+  background: var(--main-color);
+  border-radius: 5rem;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin: 2rem 0 0 0;
+  width: 300px;
+}
+.contact-btn:hover {
+  filter: drop-shadow(0 0 2rem var(--main-color));
+}
+.input-div {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.input-div input,
+form textarea {
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  background-color: var(--second-bg-color);
+  margin: 1rem 0;
+  border: 0.5rem solid transparent;
+  /* resize:none; */
+}
+.input-div input {
+  width: 49%;
+}
+form textarea {
+  resize: none;
+}
+.input-div input:focus,
+form textarea:focus {
+  outline: none;
+  border-bottom: 0.1rem solid var(--main-color);
+  transition: 1s ease;
+}
+
+/* Contact Me End */
+/* Footer Start */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem 10%;
+  background-color: var(--second-bg-color);
+}
+.footer p {
+  font-size: 1.6rem;
+}
+.footer-icon-top a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: var(--main-color);
+  border-radius: 1rem;
+  transition: 0.5s ease;
+}
+.footer-icon-top a i {
+  font-size: 2rem;
+  color: var(--second-bg-color);
+}
+.footer-icon-top a:hover {
+  box-shadow: 0 0 1rem var(--main-color);
+}
+/* Footer End */
+
+/* Responsive Start */
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .header {
+    padding: 2rem 7%;
+  }
+  .section {
+    padding: 10rem 7% rem;
+  }
+  .footer {
+    padding: 2rem 3%;
+  }
+}
+@media screen and (max-width: 790px) {
+  .navbar {
+    position: absolute;
+    transform: translateY(-500px);
+  }
+  .home {
+    flex-direction: column;
+  }
+  .home-content h3 {
+    font-size: 2.6rem;
+  }
+  .home-content h1 {
+    font-size: 5rem;
+  }
+  .home-img img {
+    width: 70vw;
+    margin-top: 4rem;
+  }
+  .about {
+    flex-direction: column-reverse;
+  }
+  .about img {
+    width: 70vw;
+    margin-top: 4rem;
+  }
+  .services {
+    gap: 4rem;
+    padding-bottom: 7rem;
+  }
+  .portfolio {
+    padding-bottom: 7rem;
+  }
+  .portfolio-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 671px) {
+  html {
+    font-size: 50%;
+  }
+  .portfolio-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .contact form .input-div input {
+    width: 100%;
+  }
+  @media screen and (max-width: 380px) {
+    html {
+      font-size: 40%;
+    }
+  }
+}
